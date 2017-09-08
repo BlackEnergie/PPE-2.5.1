@@ -80,6 +80,6 @@ class LigueDAO{
 		return $result;
 	}
 */
-}
+
 
 
