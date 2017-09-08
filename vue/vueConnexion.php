@@ -18,10 +18,6 @@
 
 		<?php
 
-			if(isset($_POST["password"])){
-				$_SESSION["password"] = $_POST["password"];
-			}
-
 			if(isset($_POST["login"])){
 				$_SESSION["login"] = $_POST["login"];
 			}

@@ -25,12 +25,11 @@ $m2lMP->ajouterComposant($m2lMP->creerItemLien("ligues", "Ligues"));
 $m2lMP->ajouterComposant($m2lMP->creerItemLien("contact", "Contact"));
 $m2lMP->ajouterComposant($m2lMP->creerItemLien("connexion", "Se connecter"));
 
+if($statut == "salarié"){
+	$m2lMP->ajouterComposant($m2lMP->creerItemLien("fichie de paie", "Fiches"));
+}
+
 $menuPrincipal = $m2lMP->creerMenu($_SESSION['m2lMP'],'m2lMP');
 
 
 include_once dispatcher::dispatch($_SESSION['m2lMP']);
-
-
-
-
- 
