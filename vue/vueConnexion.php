@@ -9,7 +9,6 @@
 			<br>
 			<input type="password" placeholder="Mot de passe" name="password" id="password" required="required">
 			<br>
-			<input type="button">
 		</form>
 	</div>
 	</main>
