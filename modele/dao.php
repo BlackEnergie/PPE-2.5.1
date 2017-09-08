@@ -12,7 +12,7 @@ class DBConnex extends PDO{
 		
 	function __construct(){
 		try {
-			parent::__construct(Param::$dsn ,Param::$user, Param::$pass);
+			parent::__construct($dsn ,$user, $pass);
 		} catch (Exception $e) {
 			echo $e->getMessage();
 			die("Impossible de se connecter. " );
@@ -47,9 +47,17 @@ class DBConnex extends PDO{
 	
 }
 	
+class LigueDAO{
+    
+    public function lire(Ligue $ligue){
+        $sql = "select * from ligue where IDL=" . $ligue->getidLigue();
+        $ligue = DBConnex::getInstance()->queryFetchFirstRow($sql);
+        return $ligue;
+    }
+    
+}
 
-
-class EquipeDAO{
+/* class EquipeDAO{
 		
 	public function lire(Equipe $equipe){
 		$sql = "select * from Equipe where idEquipe = " . $equipe->getIdEquipe();
@@ -71,6 +79,7 @@ class EquipeDAO{
 		}
 		return $result;
 	}
+*/
 }
 
 
