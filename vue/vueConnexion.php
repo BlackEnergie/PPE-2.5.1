@@ -8,9 +8,11 @@
 			<input type="text" placeholder="Identifiant" name="login" id="login" required="required">
 			<br>
 			<input type="password" placeholder="Mot de passe" name="password" id="password" required="required">
+			<br>
+			<input type="button">
 		</form>
 	</div>
-	</main>kjnk
+	</main>
 	<footer>
 		<?php include 'bas.php' ;?>
 	</footer>
