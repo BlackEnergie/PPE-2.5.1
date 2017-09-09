@@ -112,3 +112,40 @@ class Intervenant{
     }
     
 }
+
+class Club {
+    private $id;
+    private $ligue;
+    private $codeVille;
+    private $nomClub;
+    private $adresse;
+    
+    public function __construct($unId, $uneLigue, $unCodeVille, $unNomClub, $uneAdresse){
+        $this->id = $unId;
+        $this->ligue = $uneLigue;
+        $this->codeVille = $unCodeVille;
+        $this->nomClub = $unNomClub;
+        $this->adresse = $uneAdresse;
+    }
+    
+    public function getId(){
+        return $this->id;
+    }
+    
+    public function getLigue(){
+        return $this->ligue;
+    }
+    
+    public function getCodeVille(){
+        return $this->codeVille;
+    }
+    
+    public function getNomClub(){
+        return $this->nomClub;
+    }
+    
+    public function getAdresse(){
+        return $this->adresse;
+    }
+    
+}
