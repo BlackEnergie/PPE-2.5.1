@@ -149,3 +149,130 @@ class Club {
     }
     
 }
+
+class Contrat {
+    private $id;
+    private $dateDebut;
+    private $dateFin;
+    private $typeContrat;
+    private $nbHeures;
+    
+    public function __construct($id, $debut, $fin, $type, $heures){
+        $this->id = $id;
+        $this->dateDebut = $debut;
+        $this->dateFin = $fin;
+        $this->typeContrat = $type;
+        $this->nbHeures = $heures;
+    }
+    
+    public function getId(){
+        return $this->id;
+    }
+    
+    public function getDateDebut(){
+        return $this->dateDebut;
+    }
+    
+    public function getDateFin(){
+        return $this->dateFin;
+    }
+    
+    public function getTypeContrat(){
+        return $this->typeContrat;
+    }
+    
+    public function getNbHeures(){
+        return $this->nbHeures;
+    }
+    
+}
+
+class Bulletin {
+    private $numero;
+    private $mois;
+    private $annee;
+    private $pdf;
+    
+    public function __construct($numero, $mois, $annee, $pdf){
+        $this->numero = $numero;
+        $this->mois = $mois;
+        $this->annee = $annee;
+        $this->pdf = $pdf;
+    }
+    
+    public function getNumero(){
+        return $this->numero;
+    }
+    
+    public function getMois(){
+        return $this->mois;
+    }
+    
+    public function getAnnee(){
+        return $this->annee;
+    }
+    
+    public function getPDF(){
+        return $this->pdf;
+    }
+}
+
+class Formation {
+    private $id;
+    private $titre;
+    private $description;
+    private $dateDebut;
+    private $dateFin;
+    private $ouvertureInscriptions;
+    private $clotureInscription;
+    private $duree;
+    private $effectifMax;
+    
+    public function __construct($id, $titre, $description, $dateDebut, $dateFin, $Oinscription, $Finscription, $duree, $effectif){
+        $this->id = $id;
+        $this->titre = $titre;
+        $this->description = $description;
+        $this->dateDebut = $dateDebut;
+        $this->dateFin = $dateFin;
+        $this->ouvertureInscriptions = $Oinscription;
+        $this->clotureInscription = $Finscription;
+        $this->duree = $duree;
+        $this->effectifMax = $effectif;
+    }
+    
+    public function getId(){
+        return $this->id;
+    }
+    
+    public function getTitre(){
+        return $this->titre;
+    }
+    
+    public function getDescription(){
+        return $this->description;
+    }
+    
+    public function getDateDebut(){
+        return $this->dateDebut;
+    }
+    
+    public function getDateFin(){
+        return $this->dateFin;
+    }
+    
+    public function getDateOuvertureInscri(){
+        return $this->ouvertureInscriptions;
+    }
+    
+    public function getDateFermetureInscri(){
+        return $this->clotureInscription;
+    }
+    
+    public function getDuree(){
+        return $this->duree;
+    }
+    
+    public function getEffectifMax(){
+        return $this->effectifMax;
+    }
+}
