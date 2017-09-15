@@ -33,7 +33,10 @@ if($_SESSION['bulletin'] != 0 && isset($_POST['modifier'])){
     $bulletinActive->setNomEntraineur($_POST['nomEntraineur']);
     $bulletinActive->setNomPresident($_POST['nomPresident']);
     $bulletinActive->setDateFondation($_POST['dateFondation']);
+<<<<<<< HEAD
     BulletinDAO::modifier($equipeActive);
+=======
+>>>>>>> c3d7e11ee3d1c87b12ace5b360ddeed30e110e69
 }
 
 require_once 'vue/vueBulletins.php' ;

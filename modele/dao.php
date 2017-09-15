@@ -56,7 +56,6 @@ class LigueDAO{
         return $ligue;
     }
 
-}
 
 public static function lesLigues(){
 	$result = array();
@@ -70,11 +69,12 @@ public static function lesLigues(){
 	}
 	return $result;
 }
+}
 
 ////////////////////////////////////////////////
 class IntervenantDAO{
 
-	public function lire(Intervenant $intervenant)
+	public function lire(Intervenant $intervenant){
 		$sql = "select IDI, NOM, PRENOM, STATUT, LOGIN, MDP from intervenant order by NOM" . $intervenant->getidInvenant();
 		$intervenant = DBConnex::getInstance()->queryFetchFirstRow($sql);
 		return $intervenant;
@@ -91,11 +91,12 @@ public static function lesIntervenants(){
 		}
 	}
 	return $result;
+    }
 }
 /////////////////////////////////////////
 class ClubDAO{
 
-	public function lire(Club $club)
+	public function lire(Club $club){
 		$sql = "select * from club where IDL=" . $club->getidInvenant();
 		$club = DBConnex::getInstance()->queryFetchFirstRow($sql);
 		return $club;
@@ -112,12 +113,12 @@ public static function lesClub(){
 		}
 	}
 	return $result;
+    }
 }
-
 ////////////////////////////////////////////
 class ContratDAO{
 
-	public function lire(Contrat $contrat)
+	public function lire(Contrat $contrat){
 		$sql = "select * from contrat where IDL=" . $contrat->getidInvenant();
 		$contrat = DBConnex::getInstance()->queryFetchFirstRow($sql);
 		return $contrat;
@@ -134,12 +135,12 @@ public static function lesContrats(){
 		}
 	}
 	return $result;
+    }
 }
-
 //////////////////////////////////////////////////
 class BulletinDAO{
 
-	public function lire(Bulletin $bulletin)
+	public function lire(Bulletin $bulletin){
 		$sql = "select * from bulletin where IDL=" . $bulletin->getidInvenant();
 		$bulletin = DBConnex::getInstance()->queryFetchFirstRow($sql);
 		return $bulletin;
@@ -156,12 +157,12 @@ public static function lesBulletins(){
 		}
 	}
 	return $result;
+    }
 }
-
 ///////////////////////////////////////////////////////////
 class FormationDAO{
 
-	public function lire(Formation $formation)
+	public function lire(Formation $formation){
 		$sql = "select * from Formation where IDL=" . $formation->getidInvenant();
 		$formation = DBConnex::getInstance()->queryFetchFirstRow($sql);
 		return $formation;
@@ -173,13 +174,13 @@ public static function lesFormations(){
 	$liste = DBConnex::getInstance()->queryFetchAll($sql);
 	if(count($liste)> 0){
 		foreach($liste as $equipe){
-			$uneEquipe = new Equipe($equipe['idEquipe'],$equipe['nomEquipe'], $equipe['nomEquipeLong'],  $equipe['nomEntraineur'],  $equipe['nomPresident'],  $equipe['dateFondation'] );
+			$uneEquipe = new Formation($equipe['idEquipe'],$equipe['nomEquipe'], $equipe['nomEquipeLong'],  $equipe['nomEntraineur'],  $equipe['nomPresident'],  $equipe['dateFondation'] );
 			$result[] = $uneEquipe;
 		}
 	}
 	return $result;
+    }
 }
-
 /* class EquipeDAO{
 
 	public function lire(Equipe $equipe){

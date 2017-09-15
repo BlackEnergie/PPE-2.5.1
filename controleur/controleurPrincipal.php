@@ -25,8 +25,13 @@ $m2lMP->ajouterComposant($m2lMP->creerItemLien("ligues", "Ligues"));
 $m2lMP->ajouterComposant($m2lMP->creerItemLien("contact", "Contact"));
 $m2lMP->ajouterComposant($m2lMP->creerItemLien("connexion", "Se connecter"));
 
-if($statut == "salarié"){
+if($statut == "salarie"){
 	$m2lMP->ajouterComposant($m2lMP->creerItemLien("fichie de paie", "Fiches"));
+	$m2lMP->ajouterComposant($m2lMP->creerItemLien("formation", "Formations"));
+}
+
+if($statut == "benevole"){
+    $m2lMP->ajouterComposant($m2lMP->creerItemLien("formation", "Formations"));
 }
 
 $menuPrincipal = $m2lMP->creerMenu($_SESSION['m2lMP'],'m2lMP');
