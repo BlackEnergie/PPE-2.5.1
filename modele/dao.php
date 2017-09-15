@@ -75,7 +75,7 @@ public static function lesLigues(){
 class IntervenantDAO{
 
 	public function lire(Intervenant $intervenant)
-		$sql = "select * from intervenant where IDL=" . $intervenant->getidInvenant();
+		$sql = "select IDI, NOM, PRENOM, STATUT, LOGIN, MDP from intervenant order by NOM" . $intervenant->getidInvenant();
 		$intervenant = DBConnex::getInstance()->queryFetchFirstRow($sql);
 		return $intervenant;
 }
@@ -86,7 +86,7 @@ public static function lesIntervenants(){
 	$liste = DBConnex::getInstance()->queryFetchAll($sql);
 	if(count($liste)> 0){
 		foreach($liste as $intervenant){
-			$unIntervenant = new Intervenant($intervenant[0],$intervenant[1], $intervenant[2],  $intervenant[3],  $intervenant[4],  $intervenant[5],  $intervenant[6],  $intervenant[7],  $intervenant[8],  $intervenant[9] );
+			$unIntervenant = new Intervenant($intervenant[0],$intervenant[1], $intervenant[2],  $intervenant[3],  $intervenant[4],  $intervenant[5]);
 			$result[] = $unIntervenant;
 		}
 	}
