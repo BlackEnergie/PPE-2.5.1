@@ -45,6 +45,29 @@ class Ligue {
     }
 }
 
+class Ligues{
+    
+    private $ligues = array();
+    public function __construct($array){
+        if (is_array($array)) {
+            $this->ligues = $array;
+        }
+    }
+    
+    public function getLigues(){
+        return $this->ligues;
+    }
+    
+    public function chercherLigueAvecID($id){
+        foreach ($this->ligues as $ligue) {
+            if ($ligue->getIdLigue() == $id)
+            {
+                return $ligue;
+            }
+        }
+    }
+}
+
 class Intervenant{
     private $id;
     private $idFonction;
@@ -111,6 +134,35 @@ class Intervenant{
         return $this->idLigue;
     }
 
+}
+
+class Intervenants {
+    
+    private $mesIntervenants;
+    
+    public function __construct($mesIntervenants)
+    {
+        $this->mesIntervenants = $mesIntervenants;
+    }
+    
+    public function getMesIntervenants()
+    {
+        return $this->mesIntervenants;
+    }
+    
+    public function setMesIntervenants($mesIntervenants)
+    {
+        $this->mesIntervenants = $mesIntervenants;
+    }
+    
+    public function chercher($TheId){
+        foreach ($this->mesIntervenants as $intervenant){
+            if ($intervenant->getId() == $TheId){
+                return $intervenant;
+            }
+        }
+        return null;
+    }
 }
 
 class Club {
@@ -214,6 +266,25 @@ class Bulletin {
 
     public function getPDF(){
         return $this->pdf;
+    }
+}
+
+class Bulletins{
+    private $bulletins = array();
+    public function __construct($array){
+        if (is_array($array)) {
+            $this->bulletins = $array;
+        }
+    }
+    public function getBulletins(){
+        return $this->bulletins;
+    }
+    public function chercherBulletinsAvecId($id){
+        foreach ($this->bulletins as $bulletins) {
+            if ($bulletin->getIdb() == $id) {
+                return $bulletin;
+            }
+        }
     }
 }
 

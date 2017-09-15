@@ -9,9 +9,9 @@
 				<legend class="titre">Connexion</legend>
 				<div class="ligne">
 					<input type="text" placeholder="Identifiant" name="login" id="login" required="required">
-					<br><br>
+						<br><br>
 					<input type="password" placeholder="Mot de passe" name="password" id="password" required="required">
-					<br><br><br>
+						<br><br><br>
 					<input type="submit" value="Valider">
 				</div>
 		</form>

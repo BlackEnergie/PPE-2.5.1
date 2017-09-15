@@ -68,8 +68,9 @@ public static function lesLigues(){
 		}
 	}
 	return $result;
+    }
 }
-}
+
 
 ////////////////////////////////////////////////
 class IntervenantDAO{
@@ -181,3 +182,5 @@ public static function lesFormations(){
 	return $result;
     }
 }
+
+
