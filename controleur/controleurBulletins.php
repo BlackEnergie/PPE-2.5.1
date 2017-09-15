@@ -37,10 +37,9 @@ if($_SESSION['bulletin'] != 0 && isset($_POST['modifier'])){
    $bulletinActive->setDateFondation($_POST['dateFondation']);
 } */
 
-=======
     $bulletinActive->setNomPresident($_POST['nomPresident']);
     $bulletinActive->setDateFondation($_POST['dateFondation']);
-<<<<<<< HEAD
+<<< HEAD
     BulletinDAO::modifier($equipeActive);
 =======
 >>>>>>> c3d7e11ee3d1c87b12ace5b360ddeed30e110e69
