@@ -4,6 +4,7 @@
 	</header>
 	<main>
 		<div class='gauche'>
+		<?php include 'vue/Ligues/ligueGauche.php' ;?>
 			
 		</div>
 		<div class='droite'>
