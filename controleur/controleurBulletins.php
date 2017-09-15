@@ -20,5 +20,9 @@ else
 		$_SESSION['bulletin']="0";
 	}
 }
+/*
+ * $link = "\"le lien\"";
+ * echo "<a href=" . $link . ">PDF</a>";
+ */
 
 require_once 'vue/vueBulletins.php' ;
