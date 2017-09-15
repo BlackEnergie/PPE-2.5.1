@@ -23,16 +23,18 @@ else
 
 
 /*****************************************************************************************************
- * Récupérer l'équipe sélectionnée
+ * Récupérer le bulletin sélectionnée
  *****************************************************************************************************/
-$equipeActive = $_SESSION['lesBulletins']->chercheEquipe($_SESSION['bulletin']);
+
+/*  $equipeActive = $_SESSION['lesBulletins']->chercheBulletin($_SESSION['bulletin']);
 
 if($_SESSION['bulletin'] != 0 && isset($_POST['modifier'])){
     $bulletinActive->setNomEquipe($_POST['nomEquipe']);
     $bulletinActive->setNomEquipeLong($_POST['nomEquipeLong']);
     $bulletinActive->setNomEntraineur($_POST['nomEntraineur']);
-    $bulletinActive->setNomPresident($_POST['nomPresident']);
-    $bulletinActive->setDateFondation($_POST['dateFondation']);
-}
+   $bulletinActive->setNomPresident($_POST['nomPresident']);
+   $bulletinActive->setDateFondation($_POST['dateFondation']);
+} */
+
 
 require_once 'vue/vueBulletins.php' ;
