@@ -21,6 +21,7 @@ else
 	}
 }
 
+<<<<<<< HEAD
 
 /*****************************************************************************************************
  * Récupérer le bulletin sélectionnée
@@ -47,3 +48,6 @@ if($_SESSION['bulletin'] != 0 && isset($_POST['modifier'])){
 >>>>>>> 7e1dfd3aa3d09f8c3bdb9fa56c0ae74e6d86e6b3
 
 require_once 'vue/vueBulletins.php' ;
+=======
+require_once 'vue/vueBulletins.php' ;
+>>>>>>> 6ddd6cf24e0e9c44a197c997b2d7f9eec250c3c0
