@@ -13,7 +13,7 @@ $composant=$interfaceConnexion->concactComposants($label, $composant);
 $interfaceConnexion->ajouterComposantLigne($composant);
 
 $label=$interfaceConnexion->creerLabel("Mot de passe : ");
-$composant=$interfaceConnexion->creerInputMdp("pw", "pw", 1, "Mot de passe", "");
+$composant=$interfaceConnexion->creerInputMdp("mdp", "mdp", 1, "Mot de passe", "");
 $composant=$interfaceConnexion->concactComposants($label, $composant);
 $interfaceConnexion->ajouterComposantLigne($composant);
 $interfaceConnexion->ajouterComposantTab();

@@ -119,4 +119,10 @@ class Formulaire{
 		echo $this->formulaireToPrint ;
 	}
 	
+	//Créer le lien du pdf
+	public function creerLien($unLien, $unNom){
+	    $composant = "<a href=". $unLien . ">".$unNom."</a>";
+	    return $composant;
+	}
+	
 }

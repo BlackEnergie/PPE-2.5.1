@@ -23,21 +23,14 @@ $interfaceBulletin = new Formulaire("GET", "index.php", "InterfaceBulletin", "co
 $titre = "<label class='titre'>Bulletins de salaire</label>";
 $interfaceBulletin->ajouterComposantLigne($titre);
 $interfaceBulletin->ajouterComposantTab();
-foreach ($listeBuletins->getBulletins() as $OBJ){
-    $nomBulletin = $OBJ->;
+foreach ($listeBuletins as $OBJ){
+    $nomBulletin = $OBJ->getMois() . "/" . $OBJ->getAnnee() . " - ";
+    $interfaceBulletin->ajouterComposantLigne($nomBulletin);
+    $nomBulletin = $interfaceBulletin->creerLien("bulletins/" . $OBJ->getPDF(), $OBJ->getPDF());
+    $interfaceBulletin->ajouterComposantLigne($nomBulletin);
+    $interfaceBulletin->ajouterComposantTab();
 }
- /*if(isset($_GET['bulletin'])){
- *	$_SESSION['bulletin']= $_GET['bulletin'];
- *}
- *else
- *{
- *	if(!isset($_SESSION['bulletin'])){
- *		$_SESSION['bulletin']="0";
- *	}
- *}
- *
- * $link = "\"le lien\"";
- * echo "<a href=" . $link . ">PDF</a>";
- */
+
+$interfaceBulletin->creerFormulaire();
 
 require_once 'vue/vueBulletins.php' ;
