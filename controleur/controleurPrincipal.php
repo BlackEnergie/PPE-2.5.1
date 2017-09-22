@@ -26,15 +26,15 @@ $m2lMP->ajouterComposant($m2lMP->creerItemLien("contact", "Contact"));
 
 
 if (isset($_SESSION['intervenant']) && !is_null($_SESSION['intervenant'])){
-    if (fixObject($_SESSION['intervenant'])->getStatutIntervant() == 'salarie'){
+    if (fixObject($_SESSION['intervenant'])->getStatut() == 'salarie'){
         $m2lMP->ajouterComposant($m2lMP->creerItemLien("formations", "Formations"));
         $m2lMP->ajouterComposant($m2lMP->creerItemLien("bulletins", "Bulletins"));
     }
     $m2lMP->ajouterComposant($m2lMP->creerItemLien("deconnexion", "Deconnexion"));
 }
 else{
-    if (isset($_GET['login']) && isset($_GET['pw'])){
-        $int = IntervenantDAO::lesIntervenants($_GET['login'], $_GET['pw']);
+    if (isset($_POST['login']) && isset($_POST['mdp'])){
+        $int = IntervenantDAO::lesIntervenants($_POST['login'], $_POST['mdp']);
         if (!is_null($int))
         {
             $_SESSION['intervenant']=$int;
