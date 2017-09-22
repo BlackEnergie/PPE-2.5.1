@@ -47,7 +47,7 @@ class DBConnex extends PDO{
 
 }
 
-/////////////////////////////
+/////////////// Classe Ligue
 class LigueDAO{
 
     public function lire(Ligue $ligue){
@@ -72,7 +72,7 @@ public static function lesLigues(){
 }
 
 
-////////////////////////////////////////////////
+////////// Classe Intervenant
 class IntervenantDAO{
 
 	public function lire(Intervenant $intervenant){
@@ -93,8 +93,19 @@ public static function lesIntervenants(){
 	}
 	return $result;
     }
+    
+    // Fonction pour vérifier si l'intervenant existe
+    public static function verification(Intervenant $intervenant){
+        $sql = "select login from intervenant where login = '" . $intervenant->getLogin() . "' and  mdp = '" . $intervenant->getMdp() ."'";
+        $login = DBConnex::getInstance()->queryFetchFirstRow($sql);
+        return $login[0];
+    }
+    
+    public static function statut(Intervenant $intervenant){
+        $sql = "select statut from intervenant where login = '" . $intervenant->getLogin() . "' and  mdp = '" . $intervenant->getMdp() ."'";
+    }
 }
-/////////////////////////////////////////
+////////////// Classe Club
 class ClubDAO{
 
 	public function lire(Club $club){
@@ -116,7 +127,7 @@ public static function lesClub(){
 	return $result;
     }
 }
-////////////////////////////////////////////
+///////////// Classe Contrat
 class ContratDAO{
 
 	public function lire(Contrat $contrat){
@@ -138,7 +149,7 @@ public static function lesContrats(){
 	return $result;
     }
 }
-//////////////////////////////////////////////////
+///////////// Classe Bulletin
 class BulletinDAO{
 
 	public function lire(Bulletin $bulletin){
@@ -147,20 +158,21 @@ class BulletinDAO{
 		return $bulletin;
 }
 
-public static function lesBulletins(){
-	$result = array();
-	$sql = "select IDB, MOIS, ANNEE, BULLETININPDF from bulletin order by IDB" ;
-	$liste = DBConnex::getInstance()->queryFetchAll($sql);
-	if(count($liste)> 0){
-		foreach($liste as $contrat){
-			$unBulletin = new Bulletin($bulletin[0],$bulletin[1], $bulletin[2], $bulletin[3]);
-			$result[] = $unBulletin;
-		}
+    public static function lesBulletins(){
+	   $result = array();
+	   $sql = "select IDB, MOIS, ANNEE, BULLETININPDF from bulletin order by IDB" ;
+	   $liste = DBConnex::getInstance()->queryFetchAll($sql);
+	   if(count($liste)> 0){
+		  foreach($liste as $contrat){
+			 $unBulletin = new Bulletin($bulletin[0],$bulletin[1], $bulletin[2], $bulletin[3]);
+			 $result[] = $unBulletin;
+		  }
 	}
 	return $result;
     }
+    
 }
-///////////////////////////////////////////////////////////
+////////////// Classe Formation
 class FormationDAO{
 
 	public function lire(Formation $formation){
